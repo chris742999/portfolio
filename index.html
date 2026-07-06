@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chris Musila | My Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/sdk/emailjscom/2.3.2/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      // Replace "user_xxxxxxxxxxxx" with your Public Key 
+      // Found in: EmailJS Dashboard > Account > Public Key
+      emailjs.init("KPVIRCEZUMq0PDJeo");
+   })();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script> 
+<script>
+  const lenis = new Lenis();
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+</script>
+
+
+<link rel="stylesheet" href="menu bar.css">
+<style>
+:root{
+--bg:#020617;
+--text:white;
+--card:#020617;
+}
+
+body.light{
+--bg:#f1f5f9;
+--text:#020617;
+--card:white;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI;}
+
+body{
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+header{
+position:fixed;
+width:100%;
+background:rgba(2,6,23,0.8);
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+ a{margin-left:20px;color:var(--text);text-decoration:none;}
+
+.toggle{
+cursor:pointer;
+padding:8px 12px;
+border:1px solid #38bdf8;
+border-radius:6px;
+}
+
+.hero{
+padding:120px 10% 60px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+.hero-container{
+padding:40px 10% 60px;
+margin-top:0;
+}
+
+.typing{
+color:#38bdf8;
+font-size:20px;
+margin-top:10px;
+}
+
+section{padding:60px 10%;}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:var(--card);
+padding:20px;
+border-radius:12px;
+border:1px solid #1e293b;
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:none;
+}
+
+button{
+padding:12px 20px;
+border:none;
+border-radius:8px;
+background:#0ea5e9;
+color:white;
+cursor:pointer;
+}
+.fade-in{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.fade-in.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+    <div id="loader-wrapper">
+    <div class="boot-container">
+        <div class="boot-log" id="bootLog"></div>
+        <div class="boot-brand">
+            <span class="glitch" data-text="CM.sys">CM.sys</span>
+            <div class="progress-loader">
+                <div class="progress-fill" id="bootProgress"></div>
+            </div>
+            <p class="status-text">INITIALIZING_CORE_PROTOCOLS...</p>
+        </div>
+    </div>
+</div>
+<div class="cursor"></div>
+<div id="particles-js"></div>
+
+<header class="main-header">
+    <div class="tab-bar">
+        <div class="container">
+            <div class="logo">CM.sys</div>
+            <nav class="nav-buttons">
+                <a href="About me.html">About</a>
+                <a href="#projects">Projects</a>
+                <a href="contact.html">Contact Me</a>
+                <a href="Musila CV.pdf" download class="cv-btn">📄 Download CV</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="hero reveal up">
+<div class="typing" id="typing"></div>
+</section>
+
+<section id="home" class="hero-container reveal up">
+    <div class="hero-content">
+        <div class="system-badge">
+            <span class="pulse reveal up"></span>
+        </div>
+
+        <h1 class="glitch-text">Chris Musila</h1>
+        <p class="hero-subtitle">Engineering intelligent software and scalable solutions</p>
+        
+        <p class="hero-description">
+           • Software <strong>Developer</strong>• Data<strong>Analyst</strong>•<strong>AI Engineer</strong>. 
+        </p>
+
+        <div class="hero-btns">
+            <a href="#projects" class="btn primary">View My Builds</a>
+            <a href="contact.html" class="btn secondary">Initiate Contact</a>
+            <div class="connection-line"></div>
+        </div>
+
+        <div class="hero-features">
+            <div class="feature-item">
+                <span class="feature-label">Specialization</span>
+                <span class="feature-value">AI & Smart Tools</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">Core Tech</span>
+                <span class="feature-value">Html, Python, JavaScript</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">Status</span>
+                <span class="feature-value" id="current-task">Frontend Development</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero-container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        z-index: 5;
+    }
+
+    /* System Badge Automation Style */
+    .system-badge {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(0, 255, 204, 0.1);
+        padding: 5px 15px;
+        border-radius: 20px;
+        border: 1px solid var(--accent-color);
+        color: var(--accent-color);
+        font-family: monospace;
+        font-size: 0.75rem;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .pulse {
+        width: 8px;
+        height: 8px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        margin-right: 10px;
+        box-shadow: 0 0 10px var(--accent-color);
+        animation: pulse-animation 2s infinite;
+    }
+
+    @keyframes pulse-animation {
+        0% { transform: scale(0.95); opacity: 1; }
+        70% { transform: scale(1.5); opacity: 0; }
+        100% { transform: scale(0.95); opacity: 0; }
+    }
+
+    .glitch-text {
+        font-size: 5rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        margin-bottom: 5px;
+        color: #c7c5cc;
+    }
+
+    .hero-subtitle {
+        color: var(--accent-color);
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 25px;
+    }
+
+    .hero-description {
+        color: var(--text-dim);
+        font-size: 1.25rem;
+        margin-bottom: 40px;
+        line-height: 1.8;
+    }
+
+    /* Buttons */
+    .hero-btns {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 60px;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .btn.primary {
+        background: var(--accent-color);
+        color: var(--bg-color);
+    }
+
+    .btn.secondary {
+        border: 1px solid var(--accent-color);
+        color: var(--accent-color);
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 255, 204, 0.2);
+    }
+
+    /* Features Grid */
+    .hero-features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+    }
+
+    .feature-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feature-label {
+        color: #666;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+
+    .feature-value {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .glitch-text { font-size: 3rem; }
+        .hero-features { grid-template-columns: 1fr; gap: 15px; }
+        .hero-btns { flex-direction: column; }
+    }
+</style>
+
+<script>
+    // Automation: Dynamic "Current Task" rotation
+    const tasks = [
+        "Frontend Development",
+        "ML Intergration",
+        "Scaling Cloud Logic",
+        "Drafting Databases"
+    ];
+    let taskIndex = 0;
+    
+    setInterval(() => {
+        taskIndex = (taskIndex + 1) % tasks.length;
+        document.getElementById('current-task').innerText = tasks[taskIndex];
+    }, 3000);
+    const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+
+// Optional: Hide cursor when it leaves the window
+document.addEventListener('mouseleave', () => {
+  cursor.style.display = 'none';
+});
+document.addEventListener('mouseenter', () => {
+  cursor.style.display = 'block';
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    threshold: 0.1, // Trigger when 10% of the element is visible
+    rootMargin: "0px 0px -50px 0px" // Trigger 50px before it hits the bottom
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        // Optional: stop observing once it has faded in
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Tell the observer to watch every element with the 'reveal' class
+  const revealElements = document.querySelectorAll(".reveal");
+  revealElements.forEach((el) => observer.observe(el));
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const bootLog = document.getElementById('bootLog');
+    const progressBar = document.getElementById('bootProgress');
+    const loader = document.getElementById('loader-wrapper');
+    
+    const logMessages = [
+        "> CHECKING_KERNAL_INTEGRITY...",
+        "> LOADING_VIRTUAL_DOM_MODULES...",
+        "> ESTABLISHING_UPLINK_STABILITY...",
+        "> HARDWARE_INTEGRITY_SCAN_COMPLETE...",
+        "> SYNCING_NEON_PROTOCOLS...",
+        "> ALL_SYSTEMS_OPERATIONAL."
+    ];
+
+    let logIndex = 0;
+    let progress = 0;
+
+    // Simulate Log Printing
+    const logInterval = setInterval(() => {
+        if (logIndex < logMessages.length) {
+            const p = document.createElement('p');
+            p.textContent = logMessages[logIndex];
+            bootLog.appendChild(p);
+            logIndex++;
+        }
+    }, 400);
+
+    // Simulate Progress Bar
+    const progressInterval = setInterval(() => {
+        progress += Math.random() * 15;
+        if (progress > 100) {
+            progress = 100;
+            clearInterval(progressInterval);
+            clearInterval(logInterval);
+            
+            // Finish Boot
+            setTimeout(() => {
+                loader.classList.add('loader-finished');
+                // Optional: Initialize your other animations here
+            }, 500);
+        }
+        progressBar.style.width = `${progress}%`;
+    }, 200);
+});
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>KenyaTech | Projects Horizontal Showcase</title>
+  <!-- Google Fonts & smooth base -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at 10% 20%, #0a0f1e, #03050b);
+      font-family: 'Inter', sans-serif;
+      color: #eef5ff;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+    .nav-buttons a {
+    color: #0cd1c1;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-buttons a:hover {
+    color: #000000;
+    border-bottom-color: #64ffda;
+}
+
+    /* reveal animation base (keep original class style) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s ease;
+    }
+    .reveal.up {
+      transform: translateY(35px);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* main projects section */
+    .projects-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FFFFFF, #b3d0ff, #6c9eff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 5px rgba(0, 150, 255, 0.2);
+      margin-bottom: 0.5rem;
+    }
+    .glow-text {
+      position: relative;
+      display: inline-block;
+    }
+    .section-header p {
+      font-size: 1.2rem;
+      color: #a3bbec;
+      border-top: 1px solid rgba(100, 150, 255, 0.3);
+      display: inline-block;
+      padding-top: 0.5rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* ---------- HORIZONTAL LAYOUT: project-grid becomes flex row ---------- */
+    .project-grid {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;         /* allows wrap on smaller screens, but horizontal priority */
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    /* each card: flexible width, consistent design */
+    .project-card {
+      background: rgba(12, 20, 35, 0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 2rem;
+      padding: 1.8rem 1.8rem 2rem 1.8rem;
+      width: 340px;
+      max-width: 100%;
+      flex: 1 1 300px;       /* basis 300px, grow equally, shrink if needed */
+      border: 1px solid rgba(72, 120, 255, 0.25);
+      transition: all 0.3s ease;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(100, 160, 255, 0.7);
+      box-shadow: 0 25px 40px -12px rgba(0, 80, 200, 0.4);
+      background: rgba(18, 28, 45, 0.85);
+    }
+
+    /* 3D rings container - from original first card, but we keep consistent for card 1 */
+    .orbit-container {
+      position: relative;
+      width: 100%;
+      height: 80px;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .ring {
+      position: absolute;
+      border: 2px solid rgba(80, 150, 255, 0.6);
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: spinRing 12s linear infinite;
+    }
+    .ring1 {
+      width: 60px;
+      height: 60px;
+      border-top-color: #4c9aff;
+      border-right-color: rgba(80, 150, 255, 0.2);
+      border-bottom-color: rgba(80, 150, 255, 0.2);
+      border-left-color: rgba(80, 150, 255, 0.2);
+      animation-duration: 8s;
+    }
+    .ring2 {
+      width: 80px;
+      height: 80px;
+      border-top-color: #a0c4ff;
+      border-left-color: rgba(100, 180, 255, 0.3);
+      border-right-color: rgba(100, 180, 255, 0.6);
+      border-bottom-color: rgba(100, 180, 255, 0.2);
+      animation-duration: 12s;
+      animation-direction: reverse;
+    }
+    .ring3 {
+      width: 40px;
+      height: 40px;
+      border: 2px solid #4c9aff;
+      border-color: #6ea8fe transparent #6ea8fe transparent;
+      animation-duration: 6s;
+    }
+    @keyframes spinRing {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .project-status {
+      display: inline-block;
+      background: rgba(0, 255, 200, 0.12);
+      backdrop-filter: blur(2px);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      color: #8effe0;
+      border: 0.5px solid rgba(80, 230, 200, 0.5);
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 0.75rem 0 0.9rem 0;
+      line-height: 1.3;
+      background: linear-gradient(135deg, #fff, #bfd9ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .project-card p {
+      color: #cbddf5;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .tech-stack span {
+      background: rgba(55, 95, 160, 0.3);
+      border-radius: 30px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #c2dcff;
+      border: 0.5px solid rgba(90, 150, 250, 0.4);
+      transition: all 0.2s;
+    }
+
+    .view-project {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #bbd9ff;
+      text-decoration: none;
+      border-bottom: 1.5px solid rgba(70, 140, 255, 0.6);
+      padding-bottom: 3px;
+      transition: 0.2s;
+    }
+
+    .view-project:hover {
+      color: white;
+      border-bottom-color: #4c9aff;
+      gap: 0.7rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* Responsive: on smaller screens, cards still horizontal but wrap gracefully */
+    @media (max-width: 1050px) {
+      .project-grid {
+        justify-content: center;
+        gap: 1.8rem;
+      }
+      .project-card {
+        width: 320px;
+        flex: 1 1 280px;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .projects-section {
+        padding: 3rem 1.5rem;
+      }
+      .project-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .project-card {
+        width: 100%;
+        max-width: 380px;
+        flex: 0 0 auto;
+      }
+      .section-header h2 {
+        font-size: 2.3rem;
+      }
+    }
+
+    /* additional subtle background glow */
+    .projects-section::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: -10%;
+      width: 120%;
+      height: 60%;
+      background: radial-gradient(ellipse at center, rgba(30, 80, 180, 0.15), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: #5f7fb0;
+      border-top: 1px solid rgba(72, 120, 255, 0.2);
+      margin-top: 2rem;
+    }
+
+    /* fix orbit-container inside cards that don't have rings: but we only show rings in first card? original spec: first card has rings container. we keep as is, other cards don't have rings - looks fine */
+  </style>
+</head>
+<body>
+
+<section id="projects" class="projects-section reveal up">
+    <div class="section-header">
+        <h2 class="glow-text">MY PROJECTS</h2>
+        
+    </div>
+
+    <div class="project-grid">
+        <!-- Card 1: with 3D Rings (kept original rings) -->
+        <div class="project-card">
+            <div class="project-card logo-ghost-card">
+    <div class="atomic-system">
+        <div class="central-node">
+            <div class="logo-circle">
+                <span class="logo-text">CM<span>.sys</span></span>
+            </div>
+        </div>
+        
+        <div class="orbit path-1">
+            <div class="ball b1"></div>
+            <div class="ball b2"></div>
+            <div class="ball b3"></div>
+            <div class="ball b4"></div>
+            <div class="ball b5"></div>
+        </div>
+        <div class="orbit path-2">
+            <div class="ball b1"></div>
+            <div class="ball b2"></div>
+            <div class="ball b3"></div>
+            <div class="ball b4"></div>
+        </div>
+        <div class="orbit path-3">
+            <div class="ball b1"></div>
+            <div class="ball b2"></div>
+            <div class="ball b3"></div>
+        </div>
+    </div>
+</div>
+            <div class="project-status">BUILD: STABLE</div>
+            <h3>Elegant Beauty Saloon booking System</h3>
+            <p>An elite, full-stack scheduling website designed to digitize salon operations through real-time data synchronization.</p>
+            <div class="tech-stack">
+                <span>Crm</span> <span>TensorFlow</span> <span>Data Viz</span> <span>JavaScript</span>
+            </div>
+            <a href="https://crm.wakenyatech.com/v2/preview/1aLdev9kh6iA1TmVEpAK" class="view-project" target="_blank" rel="noopener noreferrer">
+                View project ▹
+            </a>
+        </div>
+
+        <!-- Card 2: Primeshot Gear Solutions -->
+        <div class="project-card">
+            <div class="project-card">
+    <div class="helix-system">
+        <div class="nucleotide-pair p1"><div class="backbone b1"></div><div class="backbone b2"></div><div class="bar"></div></div>
+        <div class="nucleotide-pair p2"><div class="backbone b1"></div><div class="backbone b2"></div><div class="bar"></div></div>
+        <div class="nucleotide-pair p3"><div class="backbone b1"></div><div class="backbone b2"></div><div class="bar"></div></div>
+        <div class="nucleotide-pair p4"><div class="backbone b1"></div><div class="backbone b2"></div><div class="bar"></div></div>
+        <div class="nucleotide-pair p5"><div class="backbone b1"></div><div class="backbone b2"></div><div class="bar"></div></div>
+        <div class="nucleotide-pair p6"><div class="backbone b1"></div><div class="backbone b2"></div><div class="bar"></div></div>
+        <div class="nucleotide-pair p7"><div class="backbone b1"></div><div class="backbone b2"></div><div class="bar"></div></div>
+        <div class="nucleotide-pair p8"><div class="backbone b1"></div><div class="backbone b2"></div><div class="bar"></div></div>
+        <div class="nucleotide-pair p9"><div class="backbone b1"></div><div class="backbone b2"></div><div class="bar"></div></div>
+    </div>
+
+    <div class="card-content">
+        
+       
+    </div>
+</div>
+            <div class="project-status">NODE: ACTIVE</div>
+            <h3>Primeshot Gear Solutions</h3>
+            <p>An autonomous photography booking system that intelligently handles the end-to-end logistics of a creative business.</p>
+            <div class="tech-stack">
+                <span>Crm</span> <span>GoHighlevel</span> <span>Django</span> <span>Html/CSS</span>
+            </div>
+            <a href="https://crm.wakenyatech.com/v2/preview/xu64QO15QtFiLainxrCD?notrack=true" class="view-project" target="_blank" rel="noopener noreferrer">View Project ▹</a>
+        </div>
+
+        <!-- Card 3: Blendguard Insurance Agency -->
+        <div class="project-card">
+            <div class="project-card insurance-card">
+    <div class="cube-system">
+        <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="cube-core"></div>
+        </div>
+    </div>
+</div>
+            <div class="project-status">STATE: LIVE</div>
+            <h3>Blendguard Insurance Agency</h3>
+            <p>An autonomous insurance portal that revolutionizes the way clients secure coverage by transforming complex policy selection into a swift, self-guided digital journey.</p>
+            <div class="tech-stack">
+                <span>GoHighlevel</span> <span>Javascript</span> <span>Crm</span> <span>Workflow Automations</span>
+            </div>
+            <a href="https://crm.wakenyatech.com/v2/preview/jsK8svkSB6SZ0ihhQh5p" class="view-project" target="_blank" rel="noopener noreferrer">View Project ▹</a>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+// typing animation
+const text="Building Intelligent Systems & Modern Digital Experiences";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,50);
+}
+}
+type();
+
+// theme toggle
+function toggleTheme(){
+document.body.classList.toggle("light");
+}
+
+// particles
+particlesJS("particles-js",{
+particles:{
+number:{value:80},
+size:{value:3},
+move:{speed:1},
+line_linked:{enable:true}
+}
+});
+
+// emailjs
+function handleFormSubmit(event) {
+    event.preventDefault();
+
+    // 1. Visual Feedback: Show the system is working
+    const btn = document.getElementById('submitBtn');
+    btn.innerHTML = "Transmitting... 🛰️";
+
+    // 2. These must match your EmailJS Dashboard exactly
+    const serviceID = 'service_lgb9qtr'; // or your specific Service ID
+    const templateID = 'template_99qpqax';  // your Template ID
+
+    // 3. The Legacy SDK call
+    emailjs.sendForm(serviceID, templateID, '#contact-form')
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            
+            // Trigger your elite UI effects
+            showThankYouMessage();
+            showSuccessPopup();
+            
+            // Reset form and button
+            document.getElementById('contact-form').reset();
+            btn.innerHTML = "Send Message 📨";
+        }, function(error) {
+            console.log('FAILED...', error);
+            btn.innerHTML = "Error ❌";
+            alert("Transmission failed. Check console for details.");
+        });
+}
+
+document.querySelectorAll("section").forEach(sec=>{
+sec.classList.add("fade-in");
+observer.observe(sec);
+});
+// 1. Initialize EmailJS Legacy SDK
+(function() {
+    // Replace with your actual Public Key from EmailJS Dashboard
+    emailjs.init("KPVIRCEZUMqOPDJeo"); 
+})();
+
+// 2. The Success Popup Logic (7-Second Duration)
+function showSuccessPopup() {
+    const popup = document.getElementById('successPopup');
+    if (popup) {
+        popup.classList.add('show');
+        
+        // Auto-hide after exactly 7 seconds
+        setTimeout(() => {
+            popup.classList.remove('show');
+        }, 7000);
+    }
+}
+
+// 3. The Main Form Submission Logic
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const btn = document.getElementById('submitBtn');
+    const originalBtnText = btn.innerHTML;
+
+    // Visual Feedback: Start Transmission
+    btn.disabled = true;
+    btn.innerHTML = 'TRANSMITTING... <i class="fas fa-satellite-dish fa-spin"></i>';
+
+    // These must match your EmailJS Dashboard exactly
+    const serviceID = 'default_service'; // or your specific Service ID
+    const templateID = 'template_xxxxx';  // Replace with your Template ID
+
+    // Send Form Data
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            // A. Trigger the Green Success Popup
+            showSuccessPopup();
+
+            // B. Reset the UI
+            this.reset();
+            btn.disabled = false;
+            btn.innerHTML = originalBtnText;
+
+        }, (error) => {
+            // C. Error Handling
+            console.error('SYSTEM_ERROR:', error);
+            btn.disabled = false;
+            btn.innerHTML = 'RETRY_TRANSMISSION <i class="fas fa-exclamation-triangle"></i>';
+            alert("Uplink failed. Check console for error logs.");
+        });
+});
+function showSuccessPopup() {
+    const popup = document.getElementById('successPopup');
+    
+    // Show the popup
+    popup.classList.add('show');
+
+    // Auto-hide after 7 seconds
+    setTimeout(() => {
+        popup.classList.remove('show');
+    }, 7000);
+}
+
+// Integration into your existing Form Listener
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const btn = document.getElementById('submitBtn');
+    btn.innerHTML = "SENDING...";
+
+    // Replace with your actual Service/Template IDs
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(() => {
+            // TRIGGER THE POPUP HERE
+            showSuccessPopup();
+            
+            // Reset form and button
+            this.reset();
+            btn.innerHTML = "MESSAGE SENT ✓";
+            setTimeout(() => { btn.innerHTML = "SEND MESSAGE"; }, 3000);
+            
+        }, (error) => {
+            console.log('FAILED...', error);
+            alert("Transmission Error. Check Console.");
+        });
+});
+
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div id="footer"></div>
+
+<script src="script.js"></script>
+<footer class="elite-footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2 class="footer-logo">CM<span>.sys</span></h2>
+            <div class="contact-info">
+                <a href="tel:+254706079245" class="glow-text">+254 706079245</a>
+                <a href="mailto:chrismusila07@gmail.com" class="glow-text">chrismusila07@gmail.com</a>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <h3>Connect with the Developer</h3>
+            <div class="social-links">
+                <a href="https://wa.me/254706079245" class="whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/chris-musila-0a3871275/" class="linkedin" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:chrismusila07@gmail.com" class="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-tech">
+            <h3>Tech Stack</h3>
+            <div class="tech-icons">
+                <i class="fab fa-html5" title="HTML5"></i>
+                <i class="fab fa-css3-alt" title="CSS3"></i>
+                <i class="fab fa-js" title="JavaScript"></i>
+                <i class="fab fa-cuttlefish" title="C++"></i>
+                <i class="fas fa-network-wired" title="Networking"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 Chris Musila|| All systems operational.</p>
+    </div>
+</footer>
+<div id="successPopup">
+    <div class="success-icon">✓</div>
+    <span class="success-text">SUBMITTED_SUCCESSFULLY</span>
+</div>
+<div id="successPopup">
+    <div class="success-icon-circle">✓</div>
+    <div class="success-title">TRANSMISSION_SUCCESSFUL</div>
+    <p style="color: rgba(255,255,255,0.5); font-size: 0.7rem; margin: 0;">DATA_PACKET_RECEIVED</p>
+</div>
+</body>
+</html>

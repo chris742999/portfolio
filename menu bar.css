@@ -1,0 +1,1631 @@
+.main-header {
+    background: #d1d2d3;
+    margin: 0;
+    padding: 0;
+}
+
+.tab-bar {
+    background: #0a2a44;
+    border-bottom: 0px solid #1e3a5f;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    color: #64ffda;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-buttons a {
+    color: #0cd1c1;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-buttons a:hover {
+    color: #000000;
+    border-bottom-color: #64ffda;
+}
+
+.cv-btn {
+    background: transparent;
+    border: 1.5px solid #64ffda;
+    color: #64ffda !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.cv-btn:hover {
+    background: #64ffda;
+    color: #0a192f !important;
+    transform: translateY(-2px);
+}
+
+.theme-toggle {
+    background: #1e3a5f;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background: #2a4a6f;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-buttons {
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+/* The CSS */
+.glow-text {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff; /* Base text color */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    
+    /* The Glow Effect */
+    text-shadow: 
+        0 0 5px rgba(0, 255, 204, 0.4),  /* Inner soft glow */
+        0 0 10px rgba(0, 255, 204, 0.2), /* Mid glow */
+        0 0 20px rgba(0, 255, 204, 0.1); /* Outer atmospheric glow */
+        
+    /* Automation: Breathing Animation */
+    animation: glow-pulse 3s infinite ease-in-out;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px rgba(0, 255, 204, 0.4),
+            0 0 10px rgba(0, 255, 204, 0.2);
+        opacity: 0.9;
+    }
+    50% {
+        text-shadow: 
+            0 0 10px rgba(0, 255, 204, 0.8), /* Intensify glow */
+            0 0 20px rgba(0, 255, 204, 0.4),
+            0 0 30px rgba(0, 255, 204, 0.2);
+        opacity: 1;
+        transform: scale(1.01); /* Very subtle "pop" */
+    }
+}
+/* Create the elite spacing */
+#contact {
+    padding-top: 120px; /* Adjust this value based on your header height */
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Ensures the form is centered vertically in the viewport */
+}
+
+.contact-card {
+    margin-top: 20px; /* Extra breathing room from the header */
+    background: rgba(255, 255, 255, 0.05); /* Matching your glassmorphism theme */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px; /* Keeps the form elite and narrow */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Ensure the Header doesn't overlap content */
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #030816;
+}
+/* 1. Target the main container to remove the physical 'box' */
+.tab-bar, .main-header {
+    background: transparent !important; /* Removes the solid color */
+    border: none !important;           /* Removes the line/border */
+    box-shadow: none !important;        /* Removes any shadow 'edge' */
+    margin: 0;
+    padding: 20px 0;                    /* Keeps internal spacing but removes the box */
+}
+
+/* 2. Target the navigation buttons specifically */
+.nav-buttons a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    background: transparent;            /* Ensure buttons don't have a background box */
+    border: none;                       /* Ensure no borders on individual buttons */
+    transition: 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* 3. Add an Elite Hover Effect (Glow instead of a Box) */
+.nav-buttons a:hover {
+    color: var(--accent-color);         /* Your signature Teal */
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.8); /* Glow effect */
+    transform: translateY(-2px);
+}
+
+/* 4. Keep the CV button distinct but borderless */
+.cv-btn {
+    border: 1px solid rgba(0, 255, 204, 0.3) !important; /* Very subtle thin line */
+    border-radius: 5px;
+}
+/* 1. Tighten the Section Gap */
+#contact {
+    padding-top: 80px;    /* Reduced from 120px to bring it closer to the menu */
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Adjusts height based on the new padding */
+}
+
+/* 2. Remove any extra margin from the top of the card */
+.contact-card {
+    margin-top: 0 !important; 
+    transform: translateY(-20px); /* Subtle elite 'lift' to close the visual gap */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Deepen shadow for depth */
+}
+
+/* 3. Ensure the Header isn't taking up extra invisible space */
+.main-header {
+    height: 70px; /* Force a standard professional height */
+    display: flex;
+    align-items: center;
+}
+.connection-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--accent-color), transparent);
+    margin: 0 auto 10px auto;
+    opacity: 0.5;
+}
+.projects-section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+
+.project-card {
+    background: rgba(121, 10, 10, 0.03);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(0, 255, 204, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 30px rgba(0, 255, 204, 0.1);
+}
+
+.project-status {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.project-card p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    direction: rtl; /* this makes them right to left */
+}
+
+.project-card {
+    direction: ltr; /* keep text normal */
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.tech-stack span {
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: #ccc;
+}
+
+.view-project {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.view-project:hover {
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px var(--accent-color);
+}
+/* Container to give the pyramid a stage */
+.pyramid-container {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+    background: #000; /* Or match your card background */
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+}
+
+/* The actual 3D pyramid */
+.pyramid {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    transform-style: preserve-3d;
+    animation: rotatePyramid 8s infinite linear;
+}
+
+.side {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 60px solid rgba(0, 255, 255, 0.1); /* Glow fill */
+    transform-origin: 50% 0%;
+}
+
+/* Wireframe "Tech" Lines */
+.side::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -30px;
+    width: 0; height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-bottom-color: #375555; /* The line color */
+    box-shadow: 0 0 10px #345f70; /* Neon effect */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 50% 0%, 52% 2%, 95% 98%, 5% 98%, 52% 2%);
+}
+
+/* Positioning sides in 3D space */
+.side1 { transform: rotateY(0deg) rotateX(30deg); }
+.side2 { transform: rotateY(90deg) rotateX(30deg); }
+.side3 { transform: rotateY(180deg) rotateX(30deg); }
+.side4 { transform: rotateY(270deg) rotateX(30deg); }
+
+/* Animation Rotation */
+@keyframes rotatePyramid {
+    from { transform: rotateY(0deg) rotateX(10deg); }
+    to { transform: rotateY(360deg) rotateX(10deg); }
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Hide the real cursor globally */
+body {
+  cursor: none;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #81f59e; /* Change to your brand color */
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none; /* Crucial: lets you click through the div */
+  z-index: 9999;
+  transition: transform 0.1s ease-out; /* Adds a tiny bit of lag/smoothness */
+  transform: translate(-50%, -50%);
+}
+
+/* Optional: change cursor color on links */
+a:hover ~ .cursor {
+  transform: scale(2);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+@media (pointer: coarse) {
+  .cursor { display: none; }
+  body { cursor: auto; }
+}
+/* The initial state of the element */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+  pointer-events: none; /* Prevents clicking invisible things */
+}
+
+/* The state triggered by JavaScript */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container at top-right */
+.orbit-container {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 150px;
+    height: 150px;
+    perspective: 800px;
+}
+
+/* Base ring style */
+.ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(0, 255, 200, 0.6);
+    border-radius: 50%;
+    transform-style: preserve-3d;
+}
+
+/* Individual rings */
+.ring1 {
+    animation: orbit1 6s linear infinite;
+}
+
+.ring2 {
+    border-color: rgba(0, 150, 255, 0.6);
+    animation: orbit2 8s linear infinite;
+}
+
+.ring3 {
+    border-color: rgba(255, 0, 150, 0.6);
+    animation: orbit3 10s linear infinite;
+}
+
+/* Animations */
+@keyframes orbit1 {
+    0% {
+        transform: rotateX(65deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(65deg) rotateY(360deg);
+    }
+}
+
+@keyframes orbit2 {
+    0% {
+        transform: rotateY(65deg) rotateX(0deg);
+    }
+    100% {
+        transform: rotateY(65deg) rotateX(360deg);
+    }
+}
+
+@keyframes orbit3 {
+    0% {
+        transform: rotateZ(0deg) rotateX(65deg);
+    }
+    100% {
+        transform: rotateZ(360deg) rotateX(65deg);
+    }
+}
+.ring {
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.4);
+}
+.project-card:hover .ring {
+    animation-duration: 3s;
+}
+.project-card {
+    backdrop-filter: blur(10px);
+}
+.tools-section {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.skill-item {
+  margin-bottom: 25px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+/* The grey background of the bar */
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* The colored fill */
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6); /* Blue to Purple gradient */
+  width: 0; /* Start at 0 for the animation */
+  border-radius: 10px;
+  transition: width 1.5s cubic-bezier(0.1, 0.5, 0.2, 1);
+}
+
+/* Trigger the growth when the parent 'reveal' class gets 'active' from your JS */
+.reveal.active .progress-fill {
+  /* The width is handled by the inline style in HTML */
+}
+/* Add to your existing styles */
+.content-container {
+    max-width: 1400px; /* Increase from 1200px for more breathing room */
+    width: 100%;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr)); /* Minimum 280px per card */
+    gap: 28px;
+    width: 100%;
+}
+
+.tool-card {
+    min-width: 0; /* Prevents overflow issues */
+    width: 100%;
+}
+
+/* On medium screens - 2 columns */
+@media (max-width: 1000px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* On mobile - 1 column */
+@media (max-width: 680px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Add these styles to your existing CSS */
+
+/* Glowing text effect */
+.glow-text {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    margin-top: 8px;
+    font-family: monospace;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.5),
+                 0 0 10px rgba(0, 255, 204, 0.3),
+                 0 0 15px rgba(0, 255, 204, 0.2);
+    animation: gentlePulse 2s ease-in-out infinite;
+    transition: text-shadow 0.3s ease;
+}
+
+.glow-text:hover {
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.8),
+                 0 0 15px rgba(0, 255, 204, 0.5),
+                 0 0 25px rgba(0, 255, 204, 0.3);
+}
+
+@keyframes gentlePulse {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(0, 255, 204, 0.4),
+                     0 0 10px rgba(0, 255, 204, 0.2);
+    }
+    50% {
+        text-shadow: 0 0 8px rgba(0, 255, 204, 0.7),
+                     0 0 15px rgba(0, 255, 204, 0.4),
+                     0 0 20px rgba(0, 255, 204, 0.2);
+    }
+}
+
+/* Footer specific styles */
+.elite-footer {
+    background: rgba(3, 8, 22, 0.85);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(0, 255, 204, 0.2);
+    padding: 50px 20px 30px;
+    position: relative;
+    z-index: 10;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    padding: 0 32px;
+}
+
+.footer-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #fff, var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-logo span {
+    color: var(--accent-color);
+    -webkit-text-fill-color: var(--accent-color);
+}
+
+.footer-left p {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+}
+
+.footer-status {
+    margin-top: 16px;
+    font-family: monospace;
+    color: var(--accent-color);
+    font-size: 0.7rem;
+    background: rgba(0, 255, 204, 0.08);
+    padding: 5px 14px;
+    border-radius: 30px;
+    display: inline-block;
+    text-shadow: 0 0 4px rgba(0, 255, 204, 0.3);
+}
+
+/* Social Icons */
+.social-links {
+    display: flex;
+    gap: 14px;
+}
+
+.social-icon {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dim);
+    transition: all 0.25s ease;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px rgba(0, 255, 204, 0.3);
+}
+
+/* Tech Icons */
+.tech-icons {
+    display: flex;
+    gap: 18px;
+    font-size: 1.4rem;
+    color: var(--text-muted);
+}
+
+.tech-icons i {
+    transition: all 0.2s ease;
+}
+
+.tech-icons i:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+/* Reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: revealUp 0.6s ease forwards;
+}
+
+.up {
+    animation-delay: 0.1s;
+}
+
+@keyframes revealUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 28px;
+        padding: 0 20px;
+    }
+    .social-links, .tech-icons {
+        justify-content: center;
+    }
+    .footer-status {
+        display: inline-block;
+    }
+}
+:root {
+    --footer-bg: transparent; 
+    --footer-border: rgba(255, 255, 255, 0.08);
+    --accent-color: #00ffcc; /* The glow color */
+    --text-muted: rgba(255, 255, 255, 0.6);
+    
+    /* Social Brand Colors */
+    --color-whatsapp: #25D366;
+    --color-linkedin: #0077B5;
+    --color-email: #bb00ff;
+}
+
+.elite-footer {
+    background-color: var(--footer-bg);
+    padding: 60px 20px 20px;
+    border-top: 1px solid var(--footer-border);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* Brand (Left), Social (Center), Tech (Right) */
+    grid-template-columns: 1.5fr 1fr 1.5fr; 
+    gap: 40px;
+    align-items: start;
+}
+
+/* --- Glowing Contact Text --- */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.glow-text {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-family: 'Courier New', monospace; /* System/Dev feel */
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.2), 
+                 0 0 10px rgba(0, 255, 204, 0.2);
+    animation: textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 5px rgba(0, 255, 204, 0.4), 0 0 10px rgba(0, 255, 204, 0.2);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(0, 255, 204, 0.8), 0 0 25px rgba(0, 255, 204, 0.4);
+        color: #fff;
+    }
+}
+
+/* --- Centering the Socials --- */
+.footer-social {
+    text-align: center;
+}
+
+.footer-social .social-links {
+    justify-content: center;
+}
+
+/* --- Tech Stack to the Right --- */
+.footer-tech {
+    text-align: right;
+}
+
+.footer-tech .tech-icons {
+    justify-content: flex-end;
+}
+
+/* --- Social Hover Logic (Same as previous response) --- */
+.social-links a {
+    color: var(--text-muted);
+    font-size: 1.3rem;
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--footer-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-links a::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.social-links a.whatsapp:hover::after { top: 0; background-color: var(--color-whatsapp); }
+.social-links a.linkedin:hover::after { top: 0; background-color: var(--color-linkedin); }
+.social-links a.email:hover::after { top: 0; background-color: var(--color-email); }
+
+.social-links a:hover {
+    color: #fff;
+    transform: translateY(-5px);
+    border-color: transparent;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-tech, .footer-social {
+        text-align: center;
+    }
+    .tech-icons, .social-links {
+        justify-content: center !important;
+    }
+}
+:root {
+    --helix-color: #00ffcc;
+    --helix-glow: rgba(0, 255, 204, 0.6);
+    --speed: 3s; /* Adjust for faster/slower orbit */
+}
+
+.helix-system {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 30px;
+    height: 80px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.nucleotide-pair {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transform-style: preserve-3d;
+    /* This handles the continuous orbit */
+    animation: dnaOrbit var(--speed) linear infinite;
+}
+
+.nucleotide-pair .bar {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    top: 50%;
+}
+
+.nucleotide-pair .backbone {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: var(--helix-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--helix-glow);
+    top: -2px;
+}
+
+.nucleotide-pair .b1 { left: 0; }
+.nucleotide-pair .b2 { right: 0; }
+
+/* --- Vertical Spacing & Fixed Initial Twist --- */
+/* We position them vertically and give each a unique start delay */
+.p1 { top: 0%;   animation-delay: calc(var(--speed) * -0.1); }
+.p2 { top: 12%;  animation-delay: calc(var(--speed) * -0.2); }
+.p3 { top: 24%;  animation-delay: calc(var(--speed) * -0.3); }
+.p4 { top: 36%;  animation-delay: calc(var(--speed) * -0.4); }
+.p5 { top: 48%;  animation-delay: calc(var(--speed) * -0.5); }
+.p6 { top: 60%;  animation-delay: calc(var(--speed) * -0.6); }
+.p7 { top: 72%;  animation-delay: calc(var(--speed) * -0.7); }
+.p8 { top: 84%;  animation-delay: calc(var(--speed) * -0.8); }
+.p9 { top: 96%;  animation-delay: calc(var(--speed) * -0.9); }
+
+/* The Animation: Only rotates on the Y axis */
+@keyframes dnaOrbit {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+:root {
+    --cube-size: 60px; /* Slightly larger for impact since the frame is gone */
+    --cube-border: #00ffcc;
+    --cube-face-bg: rgba(0, 255, 204, 0.15); /* More transparent for an elite look */
+}
+
+/* The Frame Removal */
+.insurance-ghost-card {
+    position: relative;
+    background: transparent !important; /* Forces removal of any inherited BG */
+    border: none !important;            /* Removes all borders */
+    box-shadow: none !important;        /* Removes any shadow/glow from the frame */
+    width: 100%;
+    height: 300px;                      /* Provides room for the floating object */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;                  /* Allows the glow to bleed naturally */
+}
+
+/* 3D Cube System */
+.cube-system {
+    width: var(--cube-size);
+    height: var(--cube-size);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 10s infinite linear; /* Slower, more majestic rotation */
+}
+
+/* Elite Wireframe Faces */
+.face {
+    position: absolute;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    background: var(--cube-face-bg);
+    border: 0.5px solid var(--cube-border); /* Thinner lines look more professional */
+    backface-visibility: visible;
+}
+
+/* 3D Face Positioning */
+.front  { transform: rotateY(0deg) translateZ(30px); }
+.back   { transform: rotateY(180deg) translateZ(30px); }
+.left   { transform: rotateY(-90deg) translateZ(30px); }
+.right  { transform: rotateY(90deg) translateZ(30px); }
+.top    { transform: rotateX(90deg) translateZ(30px); }
+.bottom { transform: rotateX(-90deg) translateZ(30px); }
+
+/* The Floating Data Core */
+.cube-core {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+    background: #fff;
+    box-shadow: 0 0 20px var(--cube-border), 0 0 40px var(--cube-border);
+    animation: corePulse 2.5s infinite alternate ease-in-out;
+}
+
+/* --- ANIMATIONS --- */
+
+@keyframes rotateCube {
+    0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    100% { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+}
+
+@keyframes corePulse {
+    from { transform: scale(0.7); opacity: 0.5; }
+    to { transform: scale(1.1); opacity: 1; }
+}
+:root {
+    --helix-accent: #00ffcc;
+    --helix-glow: rgba(0, 255, 204, 0.5);
+    --orbit-speed: 4s;
+}
+
+/* The Ghost Container: No background, no border, no shadow */
+.helix-ghost-card {
+    position: relative;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 100%;
+    height: 300px; /* Provides vertical space for the helix */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible; /* Prevents the glow from being clipped */
+}
+
+/* The Helix Container */
+.helix-system {
+    position: relative;
+    width: 40px; /* Slightly wider for better 3D depth */
+    height: 120px;
+    perspective: 800px;
+    transform-style: preserve-3d;
+}
+
+.nucleotide-pair {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transform-style: preserve-3d;
+    animation: dnaOrbit var(--orbit-speed) linear infinite;
+}
+
+/* The Connecting Bar: Faint and high-tech */
+.nucleotide-pair .bar {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    top: 50%;
+}
+
+/* The Nucleotides: Glowing dots */
+.nucleotide-pair .backbone {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--helix-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--helix-glow), 0 0 20px var(--helix-glow);
+    top: -2px;
+}
+
+.nucleotide-pair .b1 { left: 0; }
+.nucleotide-pair .b2 { right: 0; }
+
+/* Vertical Stacking and Flow */
+.p1 { top: 0%;   animation-delay: calc(var(--orbit-speed) * -0.1); }
+.p2 { top: 12%;  animation-delay: calc(var(--orbit-speed) * -0.2); }
+.p3 { top: 24%;  animation-delay: calc(var(--orbit-speed) * -0.3); }
+.p4 { top: 36%;  animation-delay: calc(var(--orbit-speed) * -0.4); }
+.p5 { top: 48%;  animation-delay: calc(var(--orbit-speed) * -0.5); }
+.p6 { top: 60%;  animation-delay: calc(var(--orbit-speed) * -0.6); }
+.p7 { top: 72%;  animation-delay: calc(var(--orbit-speed) * -0.7); }
+.p8 { top: 84%;  animation-delay: calc(var(--orbit-speed) * -0.8); }
+.p9 { top: 96%;  animation-delay: calc(var(--orbit-speed) * -0.9); }
+
+/* Smooth 3D Rotation */
+@keyframes dnaOrbit {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+:root {
+    --cyan: #00ffcc;
+    --glow-opacity: rgba(0, 255, 204, 0.4);
+}
+
+/* Frameless Ghost Card */
+.logo-ghost-card {
+    background: transparent !important;
+    border: none !important;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+/* 3D Space */
+.atomic-system {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+/* Central Logo Design */
+.central-node {
+    position: absolute;
+    top: 50%;    left: 50%;
+    transform: translate(-50%, -50%) translateZ(20px);
+    z-index: 10;
+}
+
+.logo-circle {
+    width: 90px;
+    height: 90px;
+    border: 2px solid var(--cyan);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(5, 5, 5, 0.9);
+    box-shadow: 0 0 25px var(--cyan), inset 0 0 15px var(--cyan);
+}
+
+.logo-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: -1px;
+}
+
+.logo-text span { color: var(--cyan); }
+
+/* Orbital Paths */
+.orbit {
+    position: absolute;
+    top: 0;      left: 0;
+    width: 100%; height: 100%;
+    border: 1px solid rgba(0, 255, 204, 0.1);
+    border-radius: 50%;
+    transform-style: preserve-3d;
+}
+
+/* The Spinning Balls */
+.ball {
+    position: absolute;
+    top: 50%;    left: -5px; /* Sits on the edge of the orbit */
+    width: 10px; height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--cyan), 0 0 5px #fff;
+}
+
+/* --- ANIMATION ENGINE --- */
+/* Each path has a unique tilt; the orbit animation rotates the path itself */
+
+.path-1 { animation: orbit1 4s linear infinite; }
+.path-2 { animation: orbit2 6s linear infinite; }
+.path-3 { animation: orbit3 8s linear infinite; }
+
+@keyframes orbit1 {
+    from { transform: rotateX(75deg) rotateY(10deg) rotateZ(0deg); }
+    to   { transform: rotateX(75deg) rotateY(10deg) rotateZ(360deg); }
+}
+
+@keyframes orbit2 {
+    from { transform: rotateX(-60deg) rotateY(-20deg) rotateZ(0deg); }
+    to   { transform: rotateX(-60deg) rotateY(-20deg) rotateZ(360deg); }
+}
+
+@keyframes orbit3 {
+    from { transform: rotateX(20deg) rotateY(70deg) rotateZ(0deg); }
+    to   { transform: rotateX(20deg) rotateY(70deg) rotateZ(360deg); }
+}
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Keep it at the bottom */
+    top: 0;
+    left: 0;
+    background-color: var(--bg-color); /* Moves your background color here */
+}
+
+/* Ensure all interactive elements stay above particles */
+.main-header, .content-container, .tab-bar {
+    position: relative;
+    z-index: 10;
+}
+
+/* Make sure the custom cursor is always on top */
+.cursor {
+    z-index: 9999;
+}
+.contact-section { pointer-events: none; }
+.contact-card { pointer-events: auto; }
+::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+.skill-tag {
+            display: inline-block;
+            background: rgba(0, 255, 204, 0.06);
+            color: var(--accent-color);
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            margin: 5px;
+            border: 0.5px solid rgba(0, 255, 204, 0.2);
+            transition: 0.2s;
+        }
+
+        .skill-tag:hover {
+            background: rgba(0, 255, 204, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .hobbies-list {
+            list-style: none;
+            color: var(--text-dim);
+        }
+
+        .hobbies-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .hobbies-list li i {
+            color: var(--accent-color);
+            width: 24px;
+            font-size: 0.8rem;
+        }
+
+        /* ========== PROFESSIONAL SKILLS SECTION ========== */
+        .tools-section {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 48px;
+            border: 1px solid var(--border-light);
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .tools-section:hover {
+            border-color: var(--border-accent);
+        }
+        /* Remove the solid frame/border from the Skills section */
+.tools-section {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 48px 0 !important;
+}
+
+/* Remove borders from individual tool cards while keeping hover effect clean */
+.tool-card {
+    background: rgba(8, 14, 30, 0.5) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.tool-card:hover {
+    background: rgba(12, 22, 45, 0.7) !important;
+    transform: translateY(-4px);
+    border: none !important;
+}
+
+/* Remove the divider line if present */
+.tools-divider {
+    display: none !important;
+}
+/* Alternative: Ultra-minimal frameless but readable */
+.tools-section {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    padding: 48px 0 !important;
+}
+
+.tool-card {
+    background: rgba(5, 10, 20, 0.35) !important;
+    border: none !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+.tool-card:hover {
+    background: rgba(10, 20, 35, 0.55) !important;
+    border: none !important;
+}
+#loader-wrapper {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #020617;
+    z-index: 99999; /* Above everything */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', monospace;
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.boot-container {
+    width: 400px;
+    text-align: left;
+}
+
+.boot-log {
+    font-size: 0.7rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    height: 100px;
+    overflow: hidden;
+    opacity: 0.6;
+}
+
+.boot-brand {
+    text-align: center;
+}
+
+.boot-brand .glitch {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+}
+
+.progress-loader {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.status-text {
+    font-size: 0.6rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Class to hide the loader */
+.loader-finished {
+    opacity: 0;
+    visibility: hidden;
+}
+/* 1. The Main Portrait Card */
+/* 1. The Vertical "Blade" Container */
+.contact-card {
+    background: rgba(15, 25, 45, 0.5) !important;
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    border-radius: 20px; /* Sharper corners for a more technical feel */
+    padding: 60px !important;
+    
+    max-width: 700px !important; /* Professional "Long" width */
+    width: 90% !important;
+    margin: 120px auto 60px !important;
+    
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px;
+}
+
+/* 2. Three-Row Vertical Form Logic */
+#contact-form {
+    display: flex !important;
+    flex-direction: column !important; /* Force the 3-stack */
+    gap: 30px; /* Professional breathing room between fields */
+    width: 100%;
+}
+
+/* 3. Long & Professional Input Styling */
+.contact-card input, 
+.contact-card textarea {
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: none !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important; /* Underline style */
+    border-radius: 0 !important; /* Remove rounded corners for elite look */
+    padding: 20px 10px !important;
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+}
+
+/* The "Activation" Effect */
+.contact-card input:focus, 
+.contact-card textarea:focus {
+    background: rgba(0, 255, 204, 0.03) !important;
+    border-bottom-color: #00ffcc !important;
+    box-shadow: none; /* Keep it clean without glow boxes */
+    outline: none;
+    padding-left: 20px !important; /* Slight shift on focus for "Elite" feel */
+}
+
+/* Placeholder Styling */
+.contact-card ::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+/* 1. The "Frosted Terminal" Input Styling */
+.contact-card input, 
+.contact-card textarea {
+    width: 100% !important;
+    /* White base with 10% opacity */
+    background: rgba(255, 255, 255, 0.1) !important; 
+    backdrop-filter: blur(12px); /* Makes the white feel premium */
+    
+    /* Subtle Green Border */
+    border: 1px solid rgba(0, 255, 204, 0.2) !important; 
+    border-radius: 12px !important;
+    padding: 22px 20px !important;
+    
+    /* Text color - keep it white for readability */
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. The "Activation" State */
+.contact-card input:focus, 
+.contact-card textarea:focus {
+    /* Brighter white on focus */
+    background: rgba(255, 255, 255, 0.15) !important; 
+    
+    /* Vibrant Cyan-Green glow */
+    border-color: #00ffcc !important;
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.2), 
+                inset 0 0 10px rgba(0, 255, 204, 0.1);
+    
+    outline: none;
+    transform: translateY(-2px); /* Lifts the input slightly */
+}
+
+/* 3. Placeholder Styling (Darker for contrast against white-ish bg) */
+.contact-card ::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+/* 1. Base Popup Style */
+.custom-popup {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px); /* Start hidden below */
+    
+    /* Responsive Width Logic */
+    width: 90%; 
+    max-width: 400px; /* Limits size on desktop so it's not a giant bar */
+    
+    background: linear-gradient(135deg, #052c1e, #0c5e2e);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 16px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 2. Activation State */
+.custom-popup.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Slide up into view */
+}
+
+/* 3. The Green Tick Icon Fix */
+.popup-tick {
+    background: #00ffcc;
+    color: #020617;
+    min-width: 24px; /* Prevents icon from squeezing */
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 14px;
+    flex-shrink: 0; /* Important: stops icon from being compressed */
+}
+
+/* 4. Text Wrapping Fix */
+.custom-popup span {
+    white-space: nowrap; /* Prevents text from breaking into 2 lines on small screens */
+    letter-spacing: 0.5px;
+}
+/* 1. The Floating Overlay (Replaces the inline banner) */
+.thankyou-message {
+    position: fixed;
+    top: 20px; /* Floats at the top */
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px); /* Hidden above the screen */
+    
+    background: rgba(15, 25, 45, 0.9) !important;
+    backdrop-filter: blur(15px);
+    border: 1px solid #00ffcc;
+    border-radius: 12px;
+    padding: 18px 30px;
+    
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 99999; /* Higher than everything else */
+    
+    color: #ffffff;
+    font-weight: 500;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 255, 204, 0.2);
+    
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* 2. Active State: Slides down into view */
+.thankyou-message.show-banner {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* 3. Small Emoji/Icon Styling */
+.thankyou-message span:first-child {
+    font-size: 1.4rem;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 204, 0.5));
+}/* The Success Popup Container */
+#successPopup {
+    position: fixed;
+    top: 50%; /* Centered vertically for portrait impact */
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    
+    width: 85%;
+    max-width: 350px;
+    background: rgba(2, 20, 15, 0.95); /* Deep Cyber Green */
+    backdrop-filter: blur(15px);
+    border: 1px solid #00ffcc;
+    border-radius: 20px;
+    padding: 30px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+/* Active State */
+#successPopup.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Success Icon (Checkmark) */
+.success-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: #00ffcc;
+    color: #020617;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 0 15px #00ffcc;
+}
+
+/* Popup Text */
+.success-title {
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
