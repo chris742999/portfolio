@@ -1629,3 +1629,10 @@ a:hover ~ .cursor {
     letter-spacing: 2px;
     text-align: center;
 }
+.github {
+    color: #fff;
+}
+
+.github:hover {
+    color: #ffd700;
+}
